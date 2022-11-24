@@ -7,6 +7,9 @@ vim.wo.number = true
 vim.cmd [[ colorscheme landscape ]]
 vim.cmd [[ set colorcolumn=80 ]]
 
+-- Ctrl + e to quit parenthesis in insert mode
+vim.cmd [[ inoremap <C-e> <C-o>A ]]
+
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -33,8 +36,8 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = '*',
-  command = "set nopaste"
+    pattern = '*',
+    command = "set nopaste"
 })
 
 vim.opt.formatoptions:append { 'r' }
