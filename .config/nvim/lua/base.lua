@@ -7,8 +7,16 @@ vim.wo.number = true
 vim.cmd [[ colorscheme landscape ]]
 vim.cmd [[ set colorcolumn=80 ]]
 
--- Ctrl + e to quit parenthesis in insert mode
-vim.cmd [[ inoremap <C-e> <C-o>A ]]
+vim.cmd [[ noremap <Up> ""]]
+vim.cmd [[ noremap! <Up> <Esc>]]
+vim.cmd [[ noremap <Down> ""]]
+vim.cmd [[ noremap! <Down> <Esc>]]
+vim.cmd [[ noremap <Left> ""]]
+vim.cmd [[ noremap! <Left> <Esc>]]
+vim.cmd [[ noremap <Right> ""]]
+vim.cmd [[ noremap! <Right> <Esc>]]
+vim.cmd [[ noremap <C-z> ""]]
+vim.cmd [[ noremap! <C-z> <Esc>]]
 
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -36,8 +44,8 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-    pattern = '*',
-    command = "set nopaste"
+  pattern = '*',
+  command = "set nopaste"
 })
 
 vim.opt.formatoptions:append { 'r' }
@@ -48,3 +56,5 @@ vim.opt.winblend = 0
 vim.opt.wildoptions = 'pum'
 vim.opt.pumblend = 5
 vim.opt.background = 'dark'
+
+vim.cmd [[ set mouse= ]]

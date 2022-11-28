@@ -58,6 +58,11 @@ lsp.sumneko_lua.setup {
   },
 }
 
+lsp.pyright.setup {
+  on_attach = att,
+  capabilities = cap,
+}
+
 lsp.tsserver.setup {
   on_attach = att,
   capabilities = cap,
@@ -76,8 +81,38 @@ lsp.tailwindcss.setup {
 }
 
 lsp.vuels.setup {
-  on_attach = att,
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = true
+    att(client, bufnr)
+  end,
   capabilities = cap,
+  settings = {
+    vetur = {
+      completion = {
+        autoImport = true,
+        useScaffoldSnippets = true
+      },
+      format = {
+        defaultFormatter = {
+          html = "prettier",
+          js = "prettier",
+          ts = "prettier",
+          css = "prettier"
+        }
+      },
+      validation = {
+        template = true,
+        script = true,
+        style = true,
+        templateProps = true,
+        interpolation = true
+      },
+      experimental = {
+        templateInterpolationService = true
+      }
+    }
+  },
+  root_dir = lsp.util.root_pattern('package.json')
 }
 
 lsp.jsonls.setup {
