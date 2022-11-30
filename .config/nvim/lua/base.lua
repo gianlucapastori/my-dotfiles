@@ -8,13 +8,9 @@ vim.cmd [[ colorscheme landscape ]]
 vim.cmd [[ set colorcolumn=80 ]]
 
 vim.cmd [[ noremap <Up> ""]]
-vim.cmd [[ noremap! <Up> <Esc>]]
 vim.cmd [[ noremap <Down> ""]]
-vim.cmd [[ noremap! <Down> <Esc>]]
 vim.cmd [[ noremap <Left> ""]]
-vim.cmd [[ noremap! <Left> <Esc>]]
 vim.cmd [[ noremap <Right> ""]]
-vim.cmd [[ noremap! <Right> <Esc>]]
 vim.cmd [[ noremap <C-z> ""]]
 vim.cmd [[ noremap! <C-z> <Esc>]]
 

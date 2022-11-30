@@ -16,16 +16,14 @@ test -s ~/.alias && . ~/.alias || true
 alias nv="nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# go bin
-export PATH=$PATH:$(go env GOPATH)/bin
-
 # tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   tmux kill-server
   exec tmux new -s default
 fi
 
-
+# go bin
+export PATH=$PATH:$(go env GOPATH)/bin
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tumbleweed-wsl/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"

@@ -1,11 +1,16 @@
 local s, cmp = pcall(require, "cmp")
 if (not s) then
-  print("lspking no installed, try :PackerInstall")
+  print("lspking not installed, try :PackerInstall")
   return
 end
 local s, lspkind = pcall(require, 'lspkind')
 if (not s) then
-  print("lspking no installed, try :PackerInstall")
+  print("lspking not installed, try :PackerInstall")
+  return
+end
+local s, pairs = pcall(require, 'nvim-autopairs.completion.cmp')
+if (not s) then
+  print("nvim-autopairs.completion.cmp not installed, try :PackerInstall")
   return
 end
 
@@ -33,6 +38,11 @@ cmp.setup({
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
   }
 })
+
+cmp.event:on(
+  'confirm_done',
+  pairs.on_confirm_done()
+)
 
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect
