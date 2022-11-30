@@ -1,0 +1,81 @@
+{
+  // General Configuration
+  //
+  "workbench.colorTheme": "Dracula For Rust Theme",
+  "editor.minimap.enabled": false,
+
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 12,
+  "terminal.integrated.fontSize": 12,
+
+  "editor.rulers": [80, 100, 200],
+
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+
+  // VsVim Configuration
+  //
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": true,
+    "<C-z>": true,
+    "<C-a>": true,
+    "<C-f>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["s", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["s", "P"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
+    },
+    {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["s", "v"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["s", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["space"],
+      "commands": ["workbench.action.navigateEditorGroups"]
+    },
+    {
+      "before": ["shift", "space"],
+      "commands": ["workbench.action.terminal.focusNextPane"],
+      "when": "terminalFocus"
+    }
+  ],
+  "workbench.iconTheme": "vs-nomo-dark"
+}
